@@ -2,8 +2,15 @@
     <h1>Hello. Here are the listings of the most popular homes.</h1>
     <hr>
     <div>Home 1 is located at {{ home_1 }} </div>
-    <h3>Details</h2>
-    <div>{{ home_2_description}}</div>
+    <h3>Current Listings</h2>
+
+    {% for listing in listings %}
+        <p>{{ listing.pk }}.</p>
+        <p>{{ listing.street }} {{ listing.city }}, {{ listing.zipcode }}<br> Price: {{ listing.price }}</p>
+        <br>
+    {% endfor %}
+        
+
 
     <br>
     <hr>

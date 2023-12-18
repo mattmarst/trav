@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Listing
 
 def index(request):
+    
+    
+    """
     context = {
         "home_1": "16th South Ave.",
         "home_1_description": "Perched against stunning mountain vistas, \
@@ -18,5 +22,12 @@ def index(request):
 
 
     }
+    """
+
+
+    listings = Listing.objects.all()
+    context = {"listings": listings}
+
+
 
     return render(request, "index.html", context)
